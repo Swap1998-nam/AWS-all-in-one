@@ -117,10 +117,10 @@ sudo yum install httpd -y
 sudo systemctl start httpd
 sudo systemctl enable httpd
 echo "<h1>Welcome to AWS EC2 Web Server!</h1>" > /var/www/html/index.html
+```
+---
 
-# EC2 Storage and IAM Role Tasks
-
-## 3. Create and Attach an EBS Volume
+### 3. Create and Attach an EBS Volume
 
 **Steps:**
 
@@ -132,11 +132,10 @@ echo "<h1>Welcome to AWS EC2 Web Server!</h1>" > /var/www/html/index.html
 sudo mkfs -t ext4 /dev/xvdf
 sudo mkdir /data
 sudo mount /dev/xvdf /data
+```
+---
 
-
-# EC2 Image and IAM Role Configuration
-
-## 4. Create an AMI (Backup or Clone)
+### 4. Create an AMI (Backup or Clone)
 
 **Purpose:**  
 An Amazon Machine Image (AMI) allows you to back up your EC2 instance or replicate it to create identical environments.
@@ -158,7 +157,7 @@ An Amazon Machine Image (AMI) allows you to back up your EC2 instance or replica
 
 ---
 
-## 5. IAM Role for EC2 to Access S3
+### 5. IAM Role for EC2 to Access S3
 
 **Purpose:**  
 IAM Roles enable your EC2 instances to access AWS services securely without storing access keys.
@@ -180,4 +179,4 @@ IAM Roles enable your EC2 instances to access AWS services securely without stor
 aws s3 ls                      # List all S3 buckets
 aws s3 ls s3://bucket-name     # List all objects in a specific bucket
 aws s3 cp s3://bucket-name/file-name .  # Download a file
-
+```
